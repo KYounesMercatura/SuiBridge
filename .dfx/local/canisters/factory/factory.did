@@ -1,0 +1,10 @@
+type Factory = 
+ service {
+   getMyVault: () -> (opt principal) query;
+   getTemplateSet: () -> (bool) query;
+   lookup: (p: principal) -> (opt principal) query;
+   setAdmin: (p: principal) -> ();
+   setTemplateWasm: (wasm: blob) -> ();
+   spawnVault: () -> (record {canister_id: principal;});
+ };
+service : (init_admin: principal) -> Factory

@@ -1,0 +1,6 @@
+// Version: 1.0.0
+actor {
+  stable var admin : Principal;
+  stable var mapEntries : [(Principal, Principal)];
+  stable var templateWasm : ?Blob
+};

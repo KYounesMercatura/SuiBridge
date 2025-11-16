@@ -1,0 +1,10 @@
+[package]
+name = "wicp_bridge"
+version = "0.0.1"
+edition = "2024.alpha"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
+
+[addresses]
+wicp_bridge = "0x0"

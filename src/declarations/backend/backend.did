@@ -1,0 +1,83 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type MintedSuiCoin = 
+ record {
+   amount: nat64;
+   depositId: opt nat;
+   digest: text;
+   objectId: text;
+   tokenType: text;
+   ts: int;
+ };
+type Deposit = 
+ record {
+   amount: nat;
+   createdAt: int;
+   id: nat;
+   released: bool;
+   suiBurnTx: opt text;
+   suiRecipient: text;
+   user: principal;
+ };
+service : {
+  bridgeDeposit: (amount: nat64, suiRecipient: text) ->
+   (record {
+      depositId: opt nat;
+      msg: text;
+      ok: bool;
+    });
+  bridgeWithdraw: (amount: nat64) -> (record {
+                                        msg: text;
+                                        ok: bool;
+                                      });
+  deriveAndStoreSuiAddress: () -> (text);
+  getCanisterIcrcBalance: () -> (nat64);
+  getConfig: () ->
+   (record {
+      admin: principal;
+      canisterSuiAddress: text;
+      gasObjectId: text;
+      packageId: text;
+      paused: bool;
+      treasuryCapId: text;
+    }) query;
+  getMyDeposits: () -> (vec Deposit) query;
+  getMyRegisteredSuiAddress: () -> (opt text) query;
+  getMySuiMints: () -> (vec MintedSuiCoin) query;
+  getSuiTx: (txDigest: text) -> (text);
+  initialize: () -> ();
+  markDepositReleased: (depositId: nat, suiBurnTx: text) -> (bool);
+  recordSuiMint: (objectId: text, digest: text, amount: nat64, tokenType:
+   text, depositId: opt nat) -> ();
+  registerSuiAddress: (suiAddress: text) -> ();
+  releaseFromFrontend: (icpPrincipalText: text, amount: nat, suiBurnTx:
+   text) -> (text);
+  setTreasuryCap: (objId: text, version: nat64, digest: text) -> ();
+  setup: (packageId: text, gasObj: text, gasVer: nat64, gasDig: text) -> ();
+  signTransactionHash: (txHash: vec nat8) ->
+   (record {
+      publicKey: vec nat8;
+      signature: vec nat8;
+    });
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+}

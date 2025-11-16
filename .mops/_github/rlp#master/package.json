@@ -1,0 +1,11 @@
+{
+  "name": "rlp.mo",
+  "version": "1.0.0",
+  "description": "Motoko RLP Encoding and Decoding",
+  "main": "index.js",
+  "scripts": {
+    "test": "for i in test/*.spec.mo ; do $(vessel bin)/moc $(vessel sources) -r $i ; done"
+  },
+  "author": "",
+  "license": "ISC"
+}

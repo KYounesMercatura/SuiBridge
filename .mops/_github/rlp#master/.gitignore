@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+.vessel/
+
+#Editor
+.vscode/
+
+#wasm
+*.wasm
+
+#testing scratchpad
+temp.spec.mo

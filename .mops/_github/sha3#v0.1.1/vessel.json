@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"base","repo":"https://github.com/dfinity/motoko-base#0d42146536771a60933786d8387b7c4ea4a1614b","version":""},{"name":"iterext","repo":"https://github.com/timohanke/motoko-iterext#v2.0.0","version":""}],"dev-dependencies":[]}

@@ -1,0 +1,21 @@
+[dependencies]
+base = "0.16.0"
+test = "2.1.1"
+
+[package]
+name = "blake2b"
+version = "0.1.0"
+description = "A motoko implementation of the BLAKE2B cryptographic hash function."
+repository = "https://github.com/codecustard/motoko-blake2b"
+keywords = [
+  "blake2b",
+  "hash",
+  "crypto",
+  "cryptography",
+  "kaspa",
+  "address"
+]
+license = "MIT"
+
+[toolchain]
+moc = "0.15.1"

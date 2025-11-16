@@ -1,0 +1,22 @@
+{
+  "canisters": {
+    "backend": {
+      "main": "backend/app.mo",
+      "type": "motoko",
+      "wasm_memory_persistence": "keep"
+    },
+    "factory": {
+      "main": "backend/factory.mo",
+      "type": "motoko",
+      "wasm_memory_persistence": "keep"
+    },
+    "frontend": {
+      "dependencies": ["backend", "factory"],
+      "frontend": { "entrypoint": "frontend/index.html" },
+      "source": ["frontend/dist"],
+      "type": "assets"
+    }
+  },
+  "output_env_file": ".env",
+  "defaults": { "build": { "packtool": "mops sources" } }
+}

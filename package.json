@@ -1,0 +1,31 @@
+{
+  "name": "hello_world",
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "prebuild": "npm run prebuild --workspaces --if-present",
+    "dev": "npm run dev --workspaces --if-present"
+  },
+  "type": "module",
+  "workspaces": [
+    "frontend"
+  ],
+  "dependencies": {
+    "@dfinity/agent": "^3.4.1",
+    "@dfinity/auth-client": "^3.4.1",
+    "@dfinity/candid": "^3.4.1",
+    "@mysten/sui.js": "^0.54.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "@vitejs/plugin-react": "^5.1.0",
+    "lucide-react": "^0.553.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  }
+}

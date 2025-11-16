@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"base","repo":"https://github.com/dfinity/motoko-base#0c5029bfcc6f8d416aebad6fcd0c1c3bc492b802","version":""},{"name":"testing","repo":"https://github.com/internet-computer/testing#v0.1.1","version":""}],"dev-dependencies":[]}
